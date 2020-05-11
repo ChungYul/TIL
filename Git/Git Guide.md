@@ -85,6 +85,6 @@ $git push <remote repository name> <branch name>
 1. `git push`명령 실행
 2. GitHub에 정상적으로 Upload되었는지 확인
 
-#### 참고
+## 참고
 
 1. [Pro Git 2nd Edition](https://git-scm.com/book/ko/v2)
