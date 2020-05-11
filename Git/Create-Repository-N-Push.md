@@ -2,11 +2,11 @@
 
 ## 개요
 
-상황별 git의 기본 사용법을 정리하여 기록한다.
+상황별 git 명령을 정리하여 기록한다.
 
 ## GitHub Repository 생성 & 소스 올리기
 
-GitHub 사이트에 접속하여 Repository를 만들고, 로컬에 있는 파일을 Commit해 본다.
+GitHub 사이트에 접속하여 Repository를 만들고, 로컬에 있는 파일을 Commit한다.
 
 ### Git Repository 생성
 
@@ -15,7 +15,7 @@ GitHub 사이트에 접속하여 Repository를 만들고, 로컬에 있는 파�
 1. Github 사이트 로그인
 2. 오른쪽 "+" 아이콘 클릭
 3. New repository 클릭
-4. Repository name dlqfur
+4. Repository name 입력
 5. Create Repository 버튼 클릭
 
 ### git init
@@ -32,7 +32,7 @@ $git init
 
 ### git status
 
-이 명령은 파일의 상태를 보여준다. 파일상태가 Tracked이면 변경이 없는 것을 뜻한다. 파일상태가 Untracked 상태라는 것은 로컬 레포지토리에 등록되지 않은 상태로 본다.
+이 명령은 파일의 상태를 보여준다. 파일상태가 Tracked이면 변경이 없는 것을 뜻한다. 파일 상태가 Untracked 상태라는 것은 로컬 저장되지 등록되지 않은 상태이다.
 
 ```shell
 $git status
@@ -43,7 +43,7 @@ $git status
 
 ### git add
 
-`git add`명령은 파일을 새로 추적관리 할 수 있게해준다.  
+`git add`명령은 파일을 새로 추적관리할 수 있게 해준다.  
 
 ```shell
 $git add <file name or folder name>
