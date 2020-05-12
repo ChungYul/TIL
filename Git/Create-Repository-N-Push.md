@@ -1,8 +1,8 @@
-# Git Guide
+# 처음 사용하는 Git
 
 ## 개요
 
-상황별 git 명령을 정리하여 기록한다.
+Git 처음 사용을 위한 명령어를 정리한다.
 
 ## GitHub Repository 생성 & 소스 올리기
 
