@@ -156,7 +156,7 @@ wildcard 사용을 위한 가이드 라인
 - In the case where the "in" variable can be accessed using methods defined in the `object` class, use an unboudned wildcard
 - In the case where the code needs to access the variable as both an "in" and "out" variable, do not use a wildcard
 
-아래의 코드에서 `ln` 에 `NaturalNumber` 객체를 추가 할 수 없다.  컴파일러는 `List`  에 추가하는 타입의 객체가 무엇인지 확인 할 수 없기 때문이다. 즉, `<? extends NaturalNumber>` 란 거는 알지만 특정 타입 `T` 는 확인 할 수 없다.
+아래의 코드에서 `ln` 에 `NaturalNumber` 객체를 추가 할 수 없다.  컴파일러는 `List`  에 추가하는 타입의 객체가 무엇인지 확인 할 수 없기 때문이다. 즉, `<? extends NaturalNumber>` 란 거는 알지만 조건 타입을 만족하는  타입 `T` 는 확인 할 수 없다.
 
 ```java
 class NaturalNumber {
