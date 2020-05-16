@@ -113,8 +113,71 @@ List<B> lb = new ArrayList<>();
 List<A> la = lb; // compile-time error
 ```
 
+### [Wildcard Capture and Helper Methods][4]
+
+Generics 는 컴파일 타임에 타입을 강제하기 위해 추가되었다. 아래의 코드는 컴파일 에러를 발생시킨다.
+
+```java
+import java.util.List;
+
+public class WildcardError {
+    
+    void foo(List<?> i) {
+        i.set(0, i.get(0));
+    }
+}
+```
+
+왜냐면, `foo` 함수가 `List.set(int, E)` 호출할 때, 컴파일러는 리스트에 추가되는 `E` 타입을 모르기 때문이다. Helper 함수를 추가하여 위 상황을 피해 갈 수 있다.
+
+```java
+import java.util.List;
+
+public class WildcardFixed {
+    
+    void foo(List<?> i) {
+        fooHelper(i);
+    }
+    
+    // Helper method create so that the wildcard can be captured
+    // through type interface
+    private <T> void fooHelper(List<T> l) {
+        l.set(0, l.get(0));
+    }
+}
+```
+
+### Guideline for Wildcard Use
+
+wildcard 사용을 위한 가이드 라인
+
+- An "in" variable is defined with an upper bounded wildcard, using the `extends` keyword
+- An "out" varialbe is defined with a lower bounded wildcard, using the `super` keyword
+- In the case where the "in" variable can be accessed using methods defined in the `object` class, use an unboudned wildcard
+- In the case where the code needs to access the variable as both an "in" and "out" variable, do not use a wildcard
+
+아래의 코드에서 `ln` 에 `NaturalNumber` 객체를 추가 할 수 없다.  컴파일러는 `List`  에 추가하는 타입의 객체가 무엇인지 확인 할 수 없기 때문이다. 즉, `<? extends NaturalNumber>` 란 거는 알지만 조건 타입을 만족하는  타입 `T` 는 확인 할 수 없다.
+
+```java
+class NaturalNumber {
+    
+    private int i;
+    
+    public NaturalNumber(int i) { this.i = i; }
+    // ...
+}
+
+class EvenNumber extends NaturalNUmber {
+    public EvenNumber(int i) { super(i); }
+}
+```
+
+## Type Erasure
+
 
 
 [1]: https://docs.oracle.com/javase/tutorial/java/generics/inheritance.html
 [2]: https://docs.oracle.com/javase/tutorial/java/generics/wildcards.html
 [3]: ttps://docs.oracle.com/javase/tutorial/java/generics/subtyping.html
+[4]: https://docs.oracle.com/javase/tutorial/java/generics/capture.html
+
