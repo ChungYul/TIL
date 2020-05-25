@@ -25,7 +25,7 @@ Stream API를 이용하여 `List<Integer>` 생성한다.
 
 ```java
 int[] intArray = {1,2,3,4,5};
-List<Integer> arrayList = intArray.Stream().boxed().collect(Collectors.toList());
+List<Integer> arrayList =Arrays.Stream(intArray).boxed().collect(Collectors.toList());
 ```
 
 ### Apache Common lang
