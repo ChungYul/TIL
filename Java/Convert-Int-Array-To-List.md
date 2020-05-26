@@ -1,6 +1,6 @@
 # Convert Int Array To List
 
-알고리즘 사이트 문제를 푸는데, `int[]` 를 `List` 로 변환하여 사용해야 할 필요가 생겼다. 습관적으로 `Arrays.asList` 를 사용했는데 결과가 마음 같지 않다. `List<Integer>` 를 반환하는 것이 아니라,  `List<Int[]>`를 반환한다. 전에는 그냥 했는데 하며 구글링 해보니 결국, Apache Common lang에서 제공하는 `ArrayUtils.toObject()` 함수를 먼저 사용했어야 했다. 아무 생각없이 `ctrl+c` 와 `ctrl+v` 를 번갈아가며 개발했던 나의 무지함이 드러나 낯부끄러웠던 순간이었다.
+알고리즘 사이트 문제를 푸는데, `int[]` 를 `List` 로 변환하여 사용해야 할 필요가 생겼다. 습관적으로 `Arrays.asList` 를 사용했는데 결과가 마음들지 않는다. `List<Integer>` 를 반환하는 것이 아니라,  `List<Int[]>`를 반환한다. 전에는 그냥 했는데 '왜 그러지?'하며 구글링 해보니 결국, Apache Common lang에서 제공하는 `ArrayUtils.toObject()` 함수를 먼저 사용했어야 했다. 아무 생각없이 `ctrl+c` 와 `ctrl+v` 를 번갈아가며 개발했던 나의 무지함이 드러났던 순간이었다.
 
 ## 개요
 
@@ -37,4 +37,5 @@ List<Integer> arrayList = Arrays.asList(ArrayUtils.toOgject(intArray));
 
 ## 참고
 
-https://stackoverflow.com/questions/1073919/how-to-convert-int-into-listinteger-in-java
+- https://stackoverflow.com/questions/1073919/how-to-convert-int-into-listinteger-in-java
+- https://www.techiedelight.com/convert-int-array-list-integer/
